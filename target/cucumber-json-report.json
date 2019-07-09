@@ -1,0 +1,10 @@
+Feature: Flight search
+
+  @flightsearch
+  Scenario: User should be able to search the flight                                # webScenario.feature:5
+    Given user is on URL "https://www.emirates.com/ae/english/" of emirates website # HomePageSteps.user_is_on_URL_of_emirates_website(String)
+    When user selects the departure                                                 # HomePageSteps.user_selects_the_departure()
+      cucumber.api.PendingException: TODO: implement me
+      	at stepDefinitions.HomePageSteps.user_selects_the_departure(HomePageSteps.java:20)
+      	at ✽.When user selects the departure(webScenario.feature:7)
+
