@@ -1,27 +1,22 @@
+#Author: singh.yashvant@ymail.com
+Feature: Flight Search
 
-   
-Feature: Flight search
-@flightsearch  
-	Scenario: User should be able to search the flight
-		Given user is on URL "https://www.emirates.com/ae/english/" of emirates website
-		When user selects the departure
-		
-		
-
-#
-#1.      Access  https://www.emirates.com/ae/english/
-#
-#2.      Select departure and arrival destination
-#
-#3.    Select flight type i.e return or oneway
-#
-#4.      Select the flight date multiple dates if flight is return
-#
-#5.      Select flight date
-#
-#6.      Validate the Flight listing
-
+  @flightsearch @return
+  Scenario Outline: User should be able to search the flight
+    Given user is on URL "https://www.emirates.com/ae/english/" of emirates website
+    When user selects <departure> as country of departure
+    Examples: 
+      | departure | arrival | departingDate | arrivalingDate | numberOfPax | class         |
+      | DXB       | BOM     | 25 Jul 19     | 30 Jul 19      |           1 | Economy Class |
       
+    #And user selects <arrival> as country of arrival
+    #And user selects <departingDate> as departing date
+    #And user selects <arrivalingDate> as departing date
+    #And user selects <numberOfPax> as number of passenger
+    #And user selects <class> as class of travel
+    #And user click on search flights button
+    #Then user should be able to see the flight results
+
       
       
       #Author: your.email@your.domain.com
