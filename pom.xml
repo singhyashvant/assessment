@@ -56,17 +56,6 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<compilerArgument>-Werror</compilerArgument>
-
-					<systemPropertyVariables>
-						<property>
-							<name>browser</name>
-							<value>${browser}</value>
-						</property>
-						<property>
-							<name>cloud_config</name>
-							<value>${cloud_config}</value>
-						</property>
-					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 		</plugins>
