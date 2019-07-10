@@ -26,5 +26,5 @@ Feature: Flight Search
     Then user should be able to see the flight results
 
     Examples: 
-      | departure | arrival | departingDate | arrivalingDate |
-      | DXB       | BOM     |       1662019 |        1862019 |
+      | departure | arrival | departingDate |
+      | DXB       | BOM     |       1662019 |
