@@ -57,4 +57,8 @@ public class DriverProvider {
          //close the app
 		 mDriver.quit();
      }
+	 public void webTearDown(){
+         //close the app
+		 driver.quit();
+     }
 }
