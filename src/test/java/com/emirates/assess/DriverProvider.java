@@ -28,7 +28,7 @@ public class DriverProvider {
 	driver= new ChromeDriver();
 	return driver;
 }
-	public void androidDriver() throws MalformedURLException, InterruptedException {
+	public WebDriver androidDriver(){
 
         // set up appium
         final File classpathRoot = new File(System.getProperty("user.dir"));
@@ -40,9 +40,15 @@ public class DriverProvider {
         capabilities.setCapability("deviceName", "emulator-5554");
         capabilities.setCapability("platformVersion", "9");
         capabilities.setCapability("app", app.getAbsolutePath());
-        mDriver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"),
-                capabilities);
+        try {
+			mDriver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"),
+			        capabilities);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         waitVar = new WebDriverWait(mDriver, 90);
+		return mDriver;
 
         //Thread.sleep(90000);
 
