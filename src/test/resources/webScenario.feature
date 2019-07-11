@@ -1,5 +1,5 @@
 #Author: singh.yashvant@ymail.com
-Feature: Flight Search
+Feature: Flight Search Web
 
   @flightsearch @return
   Scenario Outline: User should be able to search the flight
