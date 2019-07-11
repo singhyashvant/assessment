@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -37,7 +36,7 @@ public class HomePageSteps extends HomePage {
 	@Then("^user should be able to see the flight results$")
 	public void user_should_be_able_to_see_the_flight_results() throws Throwable {
 		validateFlightResults();
-
+		teardown();
 	}
 
 	@Then("^user is making a one way journey$")
