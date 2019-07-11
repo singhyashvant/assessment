@@ -13,7 +13,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -53,6 +58,12 @@
     <groupId>org.json</groupId>
     <artifactId>json</artifactId>
     <version>20180813</version>
+</dependency>
+    <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>6.1.0</version>
 </dependency>
     
   </dependencies>
