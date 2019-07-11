@@ -4,13 +4,13 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pageObjects.MobilePage;
 
-public class MobilePageSteps {
+public class MobilePageSteps extends MobilePage{
 
 @Given("^user has launch the emirates app$")
 public void user_has_launch_the_emirates_app() throws Throwable {
-    // Write code here that turns the phrase above into concrete actions
-    throw new PendingException();
+	loginEmiratesApp("user","Pass");
 }
 
 @Given("^user is logged in as a guest$")
