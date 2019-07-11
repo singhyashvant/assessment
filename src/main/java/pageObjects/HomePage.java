@@ -1,7 +1,5 @@
 package pageObjects;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.List;
 
 import org.openqa.selenium.Keys;
@@ -69,4 +67,9 @@ public class HomePage {
 			assertTrue("FLight search result is not diplayed", true);
 		}
 	}
+	public void teardown()
+	{
+		driver.quit();
+	}
+
 }
