@@ -1,6 +1,9 @@
 package com.emirates.assess;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -13,6 +16,7 @@ public class CommonLibrary {
 	List<WebElement> elements = null;
 	WebElement element = null;
 	WebDriverWait wait = null;
+	static Properties prop = null;
 
 	public WebElement findElementByID(WebDriver driver,String locatorValue) {
 		try {
@@ -62,6 +66,18 @@ public class CommonLibrary {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(e));
 		
 	}
-	
-
+	public Properties loadProps()
+	{
+	FileReader reader;
+	try {
+		reader = new FileReader("./config.properties");
+		prop = new Properties();
+		prop.load(reader);
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (Exception e1) {
+		e1.printStackTrace();
+	}
+	return prop;
+	}
 }
