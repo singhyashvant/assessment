@@ -1,8 +1,9 @@
 #Author: singh.yashvant@ymail.com
+#Date: 13/07/2019
 Feature: Flight Search Web
 
   @flightsearch @return
-  Scenario Outline: User should be able to search the flight
+  Scenario Outline: [Web Assessment] User should be able to search the flight
     Given user is on URL "https://www.emirates.com/ae/english/" of emirates website
     When user selects <departure> as country of departure
     And user selects <arrival> as country of arrival

@@ -18,6 +18,12 @@ public class CommonLibrary {
 	WebDriverWait wait = null;
 	static Properties prop = null;
 
+	/**
+	 * Finds the object on the screen by using id locator type.
+	 * @param driver WebDriver object.
+	 * @param locatorValue The locator value of the object which user wants to find.
+	 * @return WebElement
+	 */
 	public WebElement findElementByID(WebDriver driver,String locatorValue) {
 		try {
 			waitForElementToVisible(driver,By.id(locatorValue));
@@ -27,6 +33,12 @@ public class CommonLibrary {
 		}
 		return element;
 	}
+	/**
+	 * Finds the object on the screen by using name locator type.
+	 * @param driver WebDriver object.
+	 * @param locatorValue The locator value of the object which user wants to find.
+	 * @return WebElement
+	 */
 	public WebElement findElementByName(WebDriver driver,String locatorValue) {
 		try {
 			waitForElementToVisible(driver,By.name(locatorValue));
@@ -36,6 +48,12 @@ public class CommonLibrary {
 		}
 		return element;
 	}
+	/**
+	 * Finds the object on the screen by using xpath locator type.
+	 * @param driver WebDriver object.
+	 * @param locatorValue The locator value of the object which user wants to find.
+	 * @return WebElement
+	 */
 	public WebElement findElementByXpath(WebDriver driver, String locatorValue) {
 		try {
 			waitForElementToVisible(driver,By.xpath(locatorValue));
@@ -45,6 +63,12 @@ public class CommonLibrary {
 		}
 		return element;
 	}
+	/**
+	 * Finds the objects on the screen by using xpath locator type.
+	 * @param driver WebDriver object.
+	 * @param locatorValue The locator value of the object which user wants to find.
+	 * @return List of WebElement
+	 */
 	public List<WebElement> findElementsByXpath(WebDriver driver, String locatorValue) {
 		try {
 			waitForElementToVisible(driver,By.xpath(locatorValue));
@@ -54,18 +78,32 @@ public class CommonLibrary {
 		}
 		return elements;
 	}
+	/**
+	 * Makes the driver wait till the object is clickable. The timeout is provided 20 seconds for now.
+	 * @param driver object of WebDriver interface
+	 * @param e object of By class
+	 */
 	public void waitForElementToClickable(WebDriver driver, By e)
 	{
 		wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(e));
 		
 	}
+	/**
+	 * Makes the driver wait till the object is visible. The timeout is provided 20 seconds for now.
+	 * @param driver object of WebDriver interface
+	 * @param e object of By class
+	 */
 	public void waitForElementToVisible(WebDriver driver, By e)
 	{
 		wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(e));
 		
 	}
+	/**
+	 * This will read the config.properties file from the project root and loads all the variables declare in the file.
+	 * @return Properties file.
+	 */
 	public Properties loadProps()
 	{
 	FileReader reader;

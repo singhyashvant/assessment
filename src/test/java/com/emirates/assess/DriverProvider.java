@@ -17,17 +17,29 @@ public class DriverProvider {
 	WebDriver driver = null;
 	WebDriver mDriver = null;
 	WebDriverWait waitVar =null;
+	/**
+	 * Instantiates the driver with fireFoxDriver
+	 * @return driver
+	 */
 	public WebDriver fireFoxDriver()
 	{
 		driver = new FirefoxDriver();
 		return driver;
 	}
+	/**
+	 * Instantiates the driver with chromeDriver
+	 * @return driver
+	 */
 	public WebDriver chromeDriver()
 	{	
 	System.setProperty("webdriver.chrome.driver" , "./chromedriver");
 	driver= new ChromeDriver();
 	return driver;
 }
+	/**
+	 * Instantiates the driver with androidDriver
+	 * @return driver
+	 */
 	public WebDriver androidDriver(){
 
         // set up appium
@@ -53,11 +65,17 @@ public class DriverProvider {
         //Thread.sleep(90000);
 
     }
-	 public void mobileTearDown(){
+	 /**
+	 * Quits appium driver
+	 */
+	public void mobileTearDown(){
          //close the app
 		 mDriver.quit();
      }
-	 public void webTearDown(){
+	 /**
+	 * Quits web driver
+	 */
+	public void webTearDown(){
          //close the app
 		 driver.quit();
      }

@@ -19,6 +19,9 @@ public class ApiTest
 {
 	static Properties prop = null;
 
+	/**
+	 * This will read the config.properties file from the project root and loads all the variables declare in the file.
+	 */
 	@BeforeClass
 	public static void start() {
 		FileReader reader;
@@ -36,6 +39,11 @@ public class ApiTest
 
 	}
 
+	/**
+	 * This is the test to validate the schema of the URL1 present in the config.properties file.
+	 * Also this test will check some key,value present in the json response
+	 * @throws Exception
+	 */
 	@Test
 	public void apiTesting1() throws Exception {
 		String url = prop.getProperty("URL1");
@@ -63,7 +71,11 @@ public class ApiTest
 		}
 	}
 	
-
+	/**
+	 * This is the test to validate the schema of the URL1 present in the config.properties file.
+	 * Also this test will check some key,value present in the json response
+	 * @throws Exception
+	 */
 	@Test
 	public void apiTesting2() throws Exception {
 		String url = prop.getProperty("URL2");
@@ -90,6 +102,11 @@ public class ApiTest
 			}
 		}
 	}
+	/**
+	 * This method always returns the json response in the string format.The url argument must specify an absolute {@link URL}.
+	 * @param URL an absolute URL giving the base location
+	 * @return The entire json response in the String format
+	 */
 	public String getJsonResponse(String URL)
 	{
 		String entireResponse = null;
